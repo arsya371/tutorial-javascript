@@ -20,9 +20,63 @@
     ⁡⁣⁢⁣}⁡
 */
 
+const hari = 3;
+let namaHari;
+
+switch (hari) {
+  case 1:
+    namaHari = "Senin";
+    break;
+  case 2:
+    namaHari = "Selasa";
+    break;
+  case 3:
+    namaHari = "Rabu";
+    break;
+  case 4:
+    namaHari = "Kamis";
+    break;
+  case 5:
+    namaHari = "Jumat";
+    break;
+  case 5:
+    namaHari = "Jumat";
+    break;
+  case 6:
+    namaHari = "Sabtu";
+    break;
+  case 7:
+    namaHari = "Minggu";
+    break;
+  default:
+    namaHari = "Hari tidak valid";
+    break;
+}
+
+console.log(namaHari);
+
 // ⁡⁣⁢⁢Eksekusi Tanpa Break:⁡ ⁡⁣⁣⁢Jika kamu tidak menempatkan break setelah setiap case, maka semua case di bawahnya akan dijalankan (⁡⁢⁣⁢fall-through⁡⁣⁣⁢) hingga menemukan break atau akhir dari switch-case.⁡
 
-// ⁡⁣⁢⁢Switch-Case dengan Ekspresi atau Operasi⁡
+// ⁡⁣⁢⁢Switch-Case dengan Ekspresi atau Operasi
+let nilai = 90;
+switch (true) {
+  case nilai >= 90:
+    console.log("Grade : A");
+    break;
+  case nilai >= 80:
+    console.log("Grade : B");
+    break;
+  case nilai >= 70:
+    console.log("Grade : C");
+    break;
+  case nilai >= 60:
+    console.log("Grade : D");
+    break;
+  default:
+    console.log("Grade : E");
+    break;
+}
+console.log(nilai);
 
 /*  ⁡⁣⁣⁢Kelebihan:⁡
       ⁡⁢⁢⁢Lebih mudah dibaca dibandingkan dengan rantai if-else panjang.
