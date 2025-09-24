@@ -9,82 +9,47 @@
     - nextSibling/previousSibling : Mendapatkan elemen saudara berikutnya/sebelumnya
 -->
 
-<!-- 
-    Menambahkan dan Menghapus Elemen DOM
-
-    Untuk menambahkan elemen baru ke DOM, kamu dapat menggunakan :
-    - createElement(tagName) : Membuat elemen baru.
-    - appenChild(childNode) : Menambahkan elemen sebagai anak dari elemen lain.
-    - insertBefore(newNode, referenceNode) : Menyisipkan elemen sebelum elemen referensi.
-
-    Untuk Menghapus elemen dari DOM, gunakan :
-    - removeChild(childNode) : Menghapus elemen anak
-    - remove() : Menghapus elemen secara langsung.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Menambahkan dan Menghapus Elemen</title>
+    <title>DOM Traversal</title>
 </head>
-
 <body>
-    <h1 id="title">DOM Menambahkan dan Menghapus Elemen</h1>
-    <ul id="list">
+    <h1>Ini title</h1>
+    <p>Ini text</p>
+    <ul id="list-item">
         <li id="item-1">Item 1</li>
         <li id="item-2">Item 2</li>
-        <li id="item-3">Item 3</li>
+        <li id="item3">Item 3</li>
     </ul>
+
     <script>
-        <!--
-            Membuat elemen <div> baru dan menambahkan teks "Ini div dibuat dari script".
-            Menambahkan <div> baru ke dalam <body>.
-            Mendapatkan elemen dengan id 'title'.
-            Menyisipkan <div> baru sebelum elemen 'title' di dalam <body>.
-
-            Membuat elemen <li> baru dan menambahkan teks "item dari script".
-            Mendapatkan elemen dengan id 'list' sebagai parent.
-            Mendapatkan elemen dengan id 'item-2'.
-            Menambahkan <li> baru ke dalam parent 'list'.
-            Menyisipkan <li> baru sebelum elemen 'item-2' di dalam parent 'list'.
-
-            Menghapus elemen 'title' dari <body>.
-            Menghapus elemen 'item-2' dari parent 'list'.
-            Menghapus elemen 'title' dari DOM menggunakan metode remove().
-            Menghapus seluruh <body> dari DOM menggunakan metode remove().
-        -->
-        // Membuat elemen <div> baru
-        const newDiv = document.createElement('div')
-        // Menambahkan teks ke <div>
-        newDiv.textContent = "Ini div dibuat dari script"
-        // Menambahkan <div> ke dalam <body>
-        document.body.appendChild(newDiv)
-        // Mendapatkan elemen dengan id 'title'
-        const title = document.getElementById('title')
-        // Menyisipkan <div> sebelum elemen 'title'
-        document.body.insertBefore(newDiv, title)
-
-        // Membuat elemen <li> baru
-        const newLi = document.createElement('li')
-        // Menambahkan teks ke <li>
-        newLi.textContent = "item dari script"
-        // Mendapatkan elemen dengan id 'list' sebagai parent
-        const parents = document.getElementById('list')
-        // Mendapatkan elemen dengan id 'item-2'
-        const item2 = document.getElementById('item-2')
-        // Menambahkan <li> ke dalam parent 'list'
-        parents.appendChild(newLi)
-        // Menyisipkan <li> sebelum elemen 'item-2'
-        parents.insertBefore(newLi, item2) 
-        // Menghapus elemen 'title' dari <body>
-        document.body.removeChild(title)
-        // Menghapus elemen 'item-2' dari parent 'list'
-        parents.removeChild(item2)
-        // Menghapus elemen 'title' dari DOM menggunakan metode remove()
-        title.remove()
-        // Menghapus seluruh <body> dari DOM menggunakan metode remove()
-        document.body.remove()
+    // Mengambil elemen <li> dengan id 'item-1'
+    const item1 = document.getElementById('item-1')
+    // Mengambil elemen <li> dengan id 'item-2'
+    const item2 = document.getElementById('item-2')
+    // Mendapatkan parent node dari item1 (yaitu <ul>), contoh:
+    // console.log(item1.parentNode)
+    // Mendapatkan parent element dari item1 (yaitu <ul>), contoh:
+    // console.log(item1.parentElement)
+    // Mengambil elemen <ul> dengan id 'list-item'
+    const listItem = document.getElementById('list-item')
+    // Menampilkan semua node anak dari <ul> (termasuk text node dan elemen)
+    console.log(listItem.childNodes)
+    // Menampilkan semua elemen anak dari <ul> (hanya elemen), contoh:
+    // console.log(listItem.children)
+    // Menampilkan elemen anak pertama dari <ul>, contoh:
+    // console.log(listItem.firstElementChild)
+    // Menampilkan elemen anak terakhir dari <ul>, contoh:
+    // console.log(listItem.lastElementChild)
+    // Menampilkan node saudara setelah item1 (bisa berupa text node atau elemen)
+    console.log(item1.nextSibling)
+    // Menampilkan elemen saudara setelah item1 (hanya elemen <li> berikutnya)
+    console.log(item1.nextElementSibling)
+    // Menampilkan elemen saudara sebelum item2 (hanya elemen <li> sebelumnya)
+    console.log(item2.previousElementSibling)
     </script>
 </body>
 </html>
