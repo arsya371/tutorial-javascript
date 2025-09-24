@@ -1,0 +1,29 @@
+<!-- Apa itu DOM?
+DOM (Document Object Model) adalah representasi struktur document HTML atau XML dalam bentuk tree (pohon) yang memungkinkan program untuk mengakses dan memanipulasi konten, struktur, dan gaya halaman web secara dinamis
+
+Node : Setiap elemen dalam tree DOM disebut "node". Ada beberapa jenis node, termasuk elemen, teks, dan atribut.
+Root Node : Dokumen HTML dimulai dari node akar (document), yang merupakan entry point untuk mengakses semua elemen lain dihalaman.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Struktur</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <p>This is a paragraph.</p>
+    <ul>
+      <li class="test">Item 1</li>
+      <li id="test-1">Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <script>
+      console.log(document.getElementsByName("li.test"));
+      console.log(document.querySelectorAll("li#test-1"));
+      let list = document.querySelectorAll("li");
+      list[0].style.color = "red";
+    </script>
+  </body>
+</html>

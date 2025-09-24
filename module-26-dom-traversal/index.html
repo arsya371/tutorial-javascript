@@ -1,0 +1,79 @@
+<!-- 
+    Menambahkan dan Menghapus Elemen DOM
+
+    Untuk menambahkan elemen baru ke DOM, kamu dapat menggunakan :
+    - createElement(tagName) : Membuat elemen baru.
+    - appenChild(childNode) : Menambahkan elemen sebagai anak dari elemen lain.
+    - insertBefore(newNode, referenceNode) : Menyisipkan elemen sebelum elemen referensi.
+
+    Untuk Menghapus elemen dari DOM, gunakan :
+    - removeChild(childNode) : Menghapus elemen anak
+    - remove() : Menghapus elemen secara langsung.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Menambahkan dan Menghapus Elemen</title>
+</head>
+
+<body>
+    <h1 id="title">DOM Menambahkan dan Menghapus Elemen</h1>
+    <ul id="list">
+        <li id="item-1">Item 1</li>
+        <li id="item-2">Item 2</li>
+        <li id="item-3">Item 3</li>
+    </ul>
+    <script>
+        <!--
+            Membuat elemen <div> baru dan menambahkan teks "Ini div dibuat dari script".
+            Menambahkan <div> baru ke dalam <body>.
+            Mendapatkan elemen dengan id 'title'.
+            Menyisipkan <div> baru sebelum elemen 'title' di dalam <body>.
+
+            Membuat elemen <li> baru dan menambahkan teks "item dari script".
+            Mendapatkan elemen dengan id 'list' sebagai parent.
+            Mendapatkan elemen dengan id 'item-2'.
+            Menambahkan <li> baru ke dalam parent 'list'.
+            Menyisipkan <li> baru sebelum elemen 'item-2' di dalam parent 'list'.
+
+            Menghapus elemen 'title' dari <body>.
+            Menghapus elemen 'item-2' dari parent 'list'.
+            Menghapus elemen 'title' dari DOM menggunakan metode remove().
+            Menghapus seluruh <body> dari DOM menggunakan metode remove().
+        -->
+        // Membuat elemen <div> baru
+        const newDiv = document.createElement('div')
+        // Menambahkan teks ke <div>
+        newDiv.textContent = "Ini div dibuat dari script"
+        // Menambahkan <div> ke dalam <body>
+        document.body.appendChild(newDiv)
+        // Mendapatkan elemen dengan id 'title'
+        const title = document.getElementById('title')
+        // Menyisipkan <div> sebelum elemen 'title'
+        document.body.insertBefore(newDiv, title)
+
+        // Membuat elemen <li> baru
+        const newLi = document.createElement('li')
+        // Menambahkan teks ke <li>
+        newLi.textContent = "item dari script"
+        // Mendapatkan elemen dengan id 'list' sebagai parent
+        const parents = document.getElementById('list')
+        // Mendapatkan elemen dengan id 'item-2'
+        const item2 = document.getElementById('item-2')
+        // Menambahkan <li> ke dalam parent 'list'
+        parents.appendChild(newLi)
+        // Menyisipkan <li> sebelum elemen 'item-2'
+        parents.insertBefore(newLi, item2) 
+        // Menghapus elemen 'title' dari <body>
+        document.body.removeChild(title)
+        // Menghapus elemen 'item-2' dari parent 'list'
+        parents.removeChild(item2)
+        // Menghapus elemen 'title' dari DOM menggunakan metode remove()
+        title.remove()
+        // Menghapus seluruh <body> dari DOM menggunakan metode remove()
+        document.body.remove()
+    </script>
+</body>
+</html>

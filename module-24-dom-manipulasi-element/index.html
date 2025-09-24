@@ -1,0 +1,55 @@
+<!-- Memanipulasi Elemen
+Setelah mengakses elemen, kamu bisa mengubah konten, atribut, dan gaya elemen tersebut.
+
+Mengubah Konten : element.textContent atau elemen.innerHTML
+Mengubah Atribut : element.setAttribute(attribut, value)
+Mengubah Gaya : elemet.style.property = value
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulasi Elemen</title>
+    <style>
+      .bg-red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+        <h1>Title</h1>
+        <p>Ini text</p>
+    </div>
+    <p id="paragraph">Ini paragraph</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <script>
+      // Mengubah konten
+      // 1. element.textContent
+      // const paragraph = document.getElementById("paragraph")
+      // // console.log(paragraph)
+      // paragraph.textContent = "Ini paragraph baru"
+      // // 2. element.innerHTML
+      // paragraph.innerHTML = "Ini paragraph dengan innerHTML"
+      // const container = document.getElementById("container")
+      // // console.log(container.textContent)
+      // container.innerHTML = '<h1>Ini ganti title baru</h1>'
+
+      // 2. Manipulasi Attribute
+      const paragraph = document.getElementById('paragraph')
+      // console.log(paragraph)
+      paragraph.setAttribute('class', 'bg-red')
+
+      // Manipulasi style
+      const li = document.querySelectorAll('li')
+      console.log(li)
+      li[2].style.color = 'blue'
+    </script>
+  </body>
+</html>
