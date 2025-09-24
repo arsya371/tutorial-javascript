@@ -30,26 +30,43 @@ Mengubah Gaya : elemet.style.property = value
       <li>Item 3</li>
     </ul>
     <script>
+      <!--
+        Dokumentasi Kode:
+
+        1. Mengubah Konten Elemen:
+           - Menggunakan `element.textContent` untuk mengubah teks pada elemen.
+           - Menggunakan `element.innerHTML` untuk mengubah HTML di dalam elemen.
+
+        2. Manipulasi Attribute:
+           - Mengambil elemen dengan id 'paragraph'.
+           - Mengubah atribut 'class' pada elemen tersebut menjadi 'bg-red'.
+
+        3. Manipulasi Style:
+           - Mengambil semua elemen <li> menggunakan `document.querySelectorAll('li')`.
+           - Mengubah warna teks pada elemen <li> ketiga (indeks ke-2) menjadi biru.
+      -->
+
       // Mengubah konten
       // 1. element.textContent
-      // const paragraph = document.getElementById("paragraph")
-      // // console.log(paragraph)
-      // paragraph.textContent = "Ini paragraph baru"
+      // const paragraph = document.getElementById("paragraph") // Mengambil elemen dengan id 'paragraph'
+      // // console.log(paragraph) // Menampilkan elemen di console
+      // paragraph.textContent = "Ini paragraph baru" // Mengubah teks pada elemen paragraph
       // // 2. element.innerHTML
-      // paragraph.innerHTML = "Ini paragraph dengan innerHTML"
-      // const container = document.getElementById("container")
-      // // console.log(container.textContent)
-      // container.innerHTML = '<h1>Ini ganti title baru</h1>'
+      // paragraph.innerHTML = "Ini paragraph dengan innerHTML" // Mengubah HTML di dalam elemen paragraph
+      // const container = document.getElementById("container") // Mengambil elemen dengan id 'container'
+      // // console.log(container.textContent) // Menampilkan teks dari container di console
+      // container.innerHTML = '<h1>Ini ganti title baru</h1>' // Mengubah HTML di dalam container
 
       // 2. Manipulasi Attribute
-      const paragraph = document.getElementById('paragraph')
-      // console.log(paragraph)
-      paragraph.setAttribute('class', 'bg-red')
+      const paragraph = document.getElementById('paragraph') // Mengambil elemen dengan id 'paragraph'
+      // console.log(paragraph) // Menampilkan elemen paragraph di console
+      paragraph.setAttribute('class', 'bg-red') // Mengubah atribut 'class' pada paragraph menjadi 'bg-red'
 
       // Manipulasi style
-      const li = document.querySelectorAll('li')
-      console.log(li)
-      li[2].style.color = 'blue'
+      const li = document.querySelectorAll('li') // Mengambil semua elemen <li>
+      console.log(li) // Menampilkan NodeList <li> di console
+      li[2].style.color = 'blue' // Mengubah warna teks pada elemen <li> ketiga menjadi biru
+
     </script>
   </body>
 </html>
