@@ -1,0 +1,97 @@
+<!--
+    Event Handling
+    Adalah konsep yang sangat penting dalam pengembangan web. Ini memungkinkan kamu untuk menangkap dan merespons interaksi pengguna, seperti klik tombol, gerakan mouse, input keyboard, dan banyak lagi
+
+    Apa itu Event?
+    Adalah sebuah tindakan atau kejadian yang terjadi dihalaman web. contohnya adalah klik pada tombol, pengisian formulir, atau pengguliran halaman. Event ini bisa ditangkap dan ditangani menggunakan JavaScript
+
+    Event Listener
+    Adalah mekanisme untuk menagkap event dan menjalankan fungsi tertentu ketika event tersebut terjadi.
+    Cara Menambahkan Event Listener :
+    1. Menggunakan onclick (Inline Event Handling)
+        <button onclick="alert('Button clicked!')">Click me</button>
+    2. Menggunakan addEventListener (JavaScript) :
+        const button = document.querySelector('button')
+        button.addEventListener('click', () ==> {
+            alert('Button clicked!')
+        })
+-->
+
+<!--
+    Jenis - Jenis Event yang umum digunakan
+
+    Mouse Event :
+    + click - ketika elemen diklik.
+    + dblclick - ketika elemen dikliik dua kali.
+    + mouseover - ketika mouse berada diatas elemen.
+    + mouseout - ketika mouse meninggalkan elemen.
+
+    Keyboard Event :
+    + keydown - ketika sebuah tombol ditekan.
+    + keyup - ketika sebuah ttombol dilepaskan.
+    + keypress - ketika sebuah tombol ditekan dan dilepaskan (umumnya tidak digunakan lagi)
+
+    Form Event :
+    + submit - ketika formulir dikirim.
+    + change - ketika nilai elemen input berubah.
+    + focus - ketika elemen form mendapatakan fokus.
+    + blur - ketika elemen form kehilangan fokus.
+
+    Window Event :
+    + load - ketika halaman selesai dimuat.
+    + resize - ketika ukuran jendela berubah.
+    + scroll - ketika halaman digulir.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <button onclick="getClick()">Click me</button>
+    <button id="submit">Submit</button>
+    <p id="text">Ini text</p>
+    <script>
+        // Contoh event handling dengan onclick (dikomentari)
+        // function getClick () {
+        //     // Menampilkan alert ketika tombol diklik
+        //     alert('Button clicked!')
+        // }
+
+        // Contoh event handling dengan addEventListener (dikomentari)
+        // const button = document.getElementById('submit')
+        // // Menambahkan event listener untuk event 'click'
+        // button.addEventListener('click', () => {
+        //     alert('Submitted!')
+        // })
+        // // Menambahkan event listener untuk event 'mouseover'
+        // button.addEventListener('mouseover', () => {
+        //     alert('Mouseover!')
+        // })
+
+        // Mengambil elemen dengan id 'text'
+        const text = document.getElementById('text')
+
+        // Fungsi yang dipanggil ketika tombol 'Click me' diklik
+        // Mengubah warna background text menjadi merah
+        function getClick() {
+            text.style.backgroundColor = 'red'
+        }
+
+        // Menambahkan event listener untuk event 'mouseover' pada text
+        // Mengubah warna text menjadi kuning ketika mouse berada di atas text
+        text.addEventListener('mouseover', () => {
+            text.style.color = 'yellow'
+        })
+
+        // Menambahkan event listener untuk event 'mouseout' pada text
+        // Mengubah warna text menjadi biru ketika mouse meninggalkan text
+        text.addEventListener('mouseout', () => {
+            text.style.color = 'blue'
+        })
+    </script>
+</body>
+</html>
